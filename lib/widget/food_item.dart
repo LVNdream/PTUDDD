@@ -19,24 +19,12 @@ class FoodItem extends StatelessWidget {
             padding: EdgeInsets.all(5),
             width: 110,
             height: 110,
-            // child: Container(
-            //   width: 110,
-            //   height: 110,
-            //   decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.circular(50),
-            //       image: DecorationImage(
-            //         image: AssetImage(
-            //           food.imageUrl,
-            //         ),
-            //       )),
-            // ),
             child: Image.asset(
               food.imageUrl,
               fit: BoxFit.fitHeight,
             ),
           ),
           Expanded(
-            // child: Text(food.name),
             child: Container(
               padding: EdgeInsets.only(
                 top: 20,
@@ -46,26 +34,52 @@ class FoodItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Text(food.name),
                   Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'food.name',
+                        food.name,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          height: 15,
                         ),
                       ),
                       Icon(
-                        Icons.arrow_back_ios_outlined,
-                        size: 15,
+                        Icons.arrow_forward_ios_outlined,
+                        size: 20,
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
+                  ),
+                  Text(
+                    food.desc,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.amber.shade900,
+                        height: 1.5),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '\$',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        '${food.price}',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
                   )
                 ],
               ),

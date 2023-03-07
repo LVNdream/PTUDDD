@@ -5,6 +5,7 @@ import 'package:delivery_fastfood_app/widget/rating_star.dart';
 import 'package:flutter/material.dart';
 import '../widget/food_list.dart';
 import '../widget/food_list_view.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class RestaurantScreen extends StatefulWidget {
   final Restaurant restaurant;
@@ -74,22 +75,22 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   //             ],
   //           ),
   //         ),
-  //         Positioned(
-  //           bottom: 15,
-  //           right: 15,
-  //           child: Container(
-  //             decoration: BoxDecoration(
-  //               color: Theme.of(context).primaryColor,
-  //               borderRadius: BorderRadius.circular(30),
-  //             ),
-  //             child: IconButton(
-  //               icon: Icon(Icons.add),
-  //               iconSize: 20,
-  //               color: Colors.white,
-  //               onPressed: () {},
-  //             ),
-  //           ),
-  //         ),
+      //     Positioned(
+      //       bottom: 15,
+      //       right: 15,
+      //       child: Container(
+      //         decoration: BoxDecoration(
+      //           color: Theme.of(context).primaryColor,
+      //           borderRadius: BorderRadius.circular(30),
+      //         ),
+      //         child: IconButton(
+      //           icon: Icon(Icons.add),
+      //           iconSize: 20,
+      //           color: Colors.white,
+      //           onPressed: () {},
+      //         ),
+      //       ),
+      //  ),
   //       ],
   //     ),
   //   );
@@ -148,7 +149,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     Text(
                       'Distance: ' + widget.restaurant.distance,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 0, 68, 255),
+                        color: Color.fromARGB(250, 0, 68, 255),
                         fontSize: 17,
                         fontWeight: FontWeight.w400,
                       ),
@@ -223,36 +224,66 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           //   height: 5,
           // ),
           Container(
-            // child: GridView.count(
-            //   crossAxisCount: 2,
-            //   children: List.generate(
-            //     widget.restaurant.menu.length,
-            //     (index) {
-            //       Food food = widget.restaurant.menu[index];
-            //       return _buildMenuItem(food);
-            //     },
-            //   ),
-            // ),
-            child: FoodList(selected, (int index) {
-              setState(() {
-                selected = index;
-              });
-              pageController.jumpToPage(index);
-            }, widget.restaurant)),
-            Expanded(
-              child: FoodListView(
-                selected,
-                (int index) {
-                  setState(
-                    () {
-                      selected = index;
-                    }, 
-                );
-              },
-               pageController,
-              widget.restaurant),
+              // child: GridView.count(
+              //   crossAxisCount: 2,
+              //   children: List.generate(
+              //     widget.restaurant.menu.length,
+              //     (index) {
+              //       Food food = widget.restaurant.menu[index];
+              //       return _buildMenuItem(food);
+              //     },
+              //   ),
+              // ),
+              child: FoodList(selected, (int index) {
+            setState(() {
+              selected = index;
+            });
+            pageController.jumpToPage(index);
+          }, widget.restaurant)),
+          Expanded(
+            child: FoodListView(selected, (int index) {
+              setState(
+                () {
+                  selected = index;
+                },
+              );
+            }, pageController, widget.restaurant),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 25),
+            height: 60,
+            child: SmoothPageIndicator(
+              controller: pageController,
+              count: widget.restaurant.menu.length,
+              effect: CustomizableEffect(
+                dotDecoration: DotDecoration(
+                  width: 8,
+                  height: 8,
+                  color: Colors.grey.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                activeDotDecoration: DotDecoration(
+                    width: 10,
+                    height: 10,
+                    color: Colors.orange.shade400,
+                    borderRadius: BorderRadius.circular(10),
+                    dotBorder: DotBorder(
+                        color: Colors.orange.shade400, padding: 2, width: 2)),
+              ),
+              onDotClicked: (index) => pageController.jumpToPage(index),
             ),
+          )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.orange.shade400,
+        elevation: 2,
+        child: Icon(
+          Icons.shopping_bag_outlined,
+          color: Colors.black,
+          size: 30,
+        ),
       ),
     );
   }

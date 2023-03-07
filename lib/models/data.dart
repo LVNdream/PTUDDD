@@ -5,16 +5,22 @@ import 'package:delivery_fastfood_app/models/user.dart';
 
 // Food
 // danh sach thuc an Recommend
-List<Food> generrateRecommendFoods(){
-  return[_sobaSoup,_saiua,_ratatouille,_tomatochicken,_burrito,_pancakes];
+List<Food> generrateRecommendFoods() {
+  return [_sobaSoup, _saiua, _ratatouille, _tomatochicken, _burrito, _pancakes];
 }
 
-List<Food> generratePopularFoods(){
-  return[_pasta,_pizza,_ramen,_salmon,_steak,];
+List<Food> generratePopularFoods() {
+  return [
+    _pasta,
+    _pizza,
+    _ramen,
+    _salmon,
+    _steak,
+  ];
 }
 
 final _sobaSoup = Food(
-    'assets/images_foreign/images/dish1.png',
+    'assets/images/dish1.png',
     'Soba Soup',
     20,
     'No1. in Sales',
@@ -22,15 +28,15 @@ final _sobaSoup = Food(
     '325 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
 final _saiua = Food(
-    'assets/images_foreign/images/dish2.png',
+    'assets/images/dish2.png',
     'Sai Ua Samun Phrai',
     31.05,
     'No1. So delicious',
@@ -38,31 +44,31 @@ final _saiua = Food(
     '425 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
 final _ratatouille = Food(
-    'assets/images_foreign/images/dish3.png',
+    'assets/images/dish3.png',
     'Ratatouille Pasta',
     19.77,
-    'highly Recommened',
+    'Highly Recommened',
     5.0,
     '565 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
 final _tomatochicken = Food(
-    'assets/images_foreign/images/dish1.png',
+    'assets/images/dish1.png',
     'Tomato Chicken',
     19.70,
     'Low Fat',
@@ -70,20 +76,12 @@ final _tomatochicken = Food(
     '634 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
-
-
-
-
-
-
-
-
 
 final _burrito = Food(
     'assets/images/burrito.jpg',
@@ -94,10 +92,10 @@ final _burrito = Food(
     '325 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _steak = Food(
@@ -109,10 +107,10 @@ final _steak = Food(
     '325 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _pasta = Food(
@@ -124,10 +122,10 @@ final _pasta = Food(
     '329 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _ramen = Food(
@@ -139,10 +137,10 @@ final _ramen = Food(
     '457 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _pancakes = Food(
@@ -154,10 +152,10 @@ final _pancakes = Food(
     '125 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _pizza = Food(
@@ -169,10 +167,10 @@ final _pizza = Food(
     '241 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _salmon = Food(
@@ -184,10 +182,10 @@ final _salmon = Food(
     '365 kcal',
     1,
     [
-      {'Noodle': 'assets/images_foreign/images/ingre1.png'},
-      {'Shrimp': 'assets/images_foreign/images/ingre2.png'},
-      {'Egg': 'assets/images_foreign/images/ingre3.png'},
-      {'Scallion': 'assets/images_foreign/images/ingre4.png'},
+      {'Noodle': 'assets/images/ingre1.png'},
+      {'Shrimp': 'assets/images/ingre2.png'},
+      {'Egg': 'assets/images/ingre3.png'},
+      {'Scallion': 'assets/images/ingre4.png'},
     ],
     'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
@@ -200,11 +198,11 @@ final _restaurant0 = Restaurant(
     5,
     // [_burrito, _pancakes, _pasta, _pizza, _ramen, _salmon, _steak]
     {
-      'Recommended':generrateRecommendFoods(),
-      'Popular':generratePopularFoods(),
-      'Beverage':[],
-      'Cakewalk':[],
-      'Noodles':[],
+      'Recommended': generrateRecommendFoods(),
+      'Popular': generratePopularFoods(),
+      'Beverage': [],
+      'Cakewalk': [],
+      'Noodles': [],
     },
     'Ỏrigane Sandwitches is delicious');
 
@@ -215,11 +213,11 @@ final _restaurant1 = Restaurant(
     '3.5km',
     4,
     {
-      'Recommended':generrateRecommendFoods(),
-      'Popular':generratePopularFoods(),
-      'Beverage':[],
-      'Cakewalk':[],
-      'Noodles':[],
+      'Recommended': generrateRecommendFoods(),
+      'Popular': generratePopularFoods(),
+      'Beverage': [],
+      'Cakewalk': [],
+      'Noodles': [],
     },
     'Ỏrigane Sandwitches is delicious');
 
@@ -230,11 +228,11 @@ final _restaurant2 = Restaurant(
     '2km',
     3,
     {
-      'Recommended':generrateRecommendFoods(),
-      'Popular':generratePopularFoods(),
-      'Beverage':[],
-      'Cakewalk':[],
-      'Noodles':[],
+      'Recommended': generrateRecommendFoods(),
+      'Popular': generratePopularFoods(),
+      'Beverage': [],
+      'Cakewalk': [],
+      'Noodles': [],
     },
     'Ỏrigane Sandwitches is delicious');
 
@@ -245,11 +243,11 @@ final _restaurant3 = Restaurant(
     '0.5km',
     4,
     {
-      'Recommended':generrateRecommendFoods(),
-      'Popular':generratePopularFoods(),
-      'Beverage':[],
-      'Cakewalk':[],
-      'Noodles':[],
+      'Recommended': generrateRecommendFoods(),
+      'Popular': generratePopularFoods(),
+      'Beverage': [],
+      'Cakewalk': [],
+      'Noodles': [],
     },
     'Ỏrigane Sandwitches is delicious');
 
@@ -260,11 +258,11 @@ final _restaurant4 = Restaurant(
     '1km',
     5,
     {
-      'Recommended':generrateRecommendFoods(),
-      'Popular':generratePopularFoods(),
-      'Beverage':[],
-      'Cakewalk':[],
-      'Noodles':[],
+      'Recommended': generrateRecommendFoods(),
+      'Popular': generratePopularFoods(),
+      'Beverage': [],
+      'Cakewalk': [],
+      'Noodles': [],
     },
     'Ỏrigane Sandwitches is delicious');
 

@@ -12,48 +12,41 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
 // Ham xay dung danh sach cac nha hang
-_buildRestaurants(){
-  List<Widget> restaurantList = [];
-  restaurants.forEach((Restaurant restaurant) {
-    restaurantList.add(
-      GestureDetector(
-        onTap: () => Navigator.push(
-           context,
-           MaterialPageRoute(
-            builder: (_) => RestaurantScreen(restaurant)
-            )
-        ),
+  _buildRestaurants() {
+    List<Widget> restaurantList = [];
+    restaurants.forEach((Restaurant restaurant) {
+      restaurantList.add(GestureDetector(
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (_) => RestaurantScreen(restaurant))),
         child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadiusDirectional.circular(15),
-          border: Border.all(
-            width: 1.0,
-            color: Colors.grey,
+          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadiusDirectional.circular(15),
+            border: Border.all(
+              width: 1.0,
+              color: Colors.grey,
+            ),
           ),
-        ),
-        child: Row(
-          children: <Widget>[
+          child: Row(children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Hero(
-                tag:restaurant.imageUrl,
+                tag: restaurant.imageUrl,
                 child: Image(
                   image: AssetImage(restaurant.imageUrl),
                   height: 150,
                   width: 150,
                   fit: BoxFit.cover,
-                  ),
+                ),
               ),
             ),
             Expanded(
-              child: Container(
-                margin: EdgeInsets.all(12),
-                child: Column(
-                  mainAxisAlignment:MainAxisAlignment.center,
+                child: Container(
+              margin: EdgeInsets.all(12),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -64,7 +57,9 @@ _buildRestaurants(){
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
-                    SizedBox(height: 4,),
+                    SizedBox(
+                      height: 4,
+                    ),
                     RatingStars(restaurant.rating),
                     Text(
                       restaurant.address,
@@ -74,9 +69,11 @@ _buildRestaurants(){
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
-                    SizedBox(height: 4,),
+                    SizedBox(
+                      height: 4,
+                    ),
                     Text(
-                      ' Distance: '+restaurant.distance,
+                      ' Distance: ' + restaurant.distance,
                       style: TextStyle(
                         color: Color.fromARGB(255, 0, 64, 255),
                         fontSize: 16,
@@ -84,19 +81,14 @@ _buildRestaurants(){
                       ),
                       overflow: TextOverflow.ellipsis,
                     )
-                ]),
-              ))
-        ]
+                  ]),
+            ))
+          ]),
         ),
-        ),
-      )
-    );
-  });
-  return Column(children: restaurantList);
-}
-
-
-
+      ));
+    });
+    return Column(children: restaurantList);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,17 +101,41 @@ _buildRestaurants(){
         ),
         title: Text('FastFood Delivery'),
         actions: <Widget>[
-          TextButton(
-              onPressed: () =>Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => CartScreen()
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(1.0),
+                child: Container(
+                  height: 70,
+                  width: 70,
+                  child: FloatingActionButton(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => CartScreen()),
+                    ),
+                    backgroundColor: Colors.orange.shade400,
+                    elevation: 2,
+                    child: Icon(
+                      Icons.shopping_bag_outlined,
+                      color: Colors.black,
+                      size: 35,
+                    ),
                   ),
                 ),
-              child: Text(
-                'Cart(5)',
-                style: TextStyle(color: Colors.white, fontSize: 20.0),
-              ))
+              ),
+              Positioned(
+                  top: 2,
+                  left: 15,
+                  child: Text(
+                    '${currentUser.cart.length + 1}',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 237, 234, 234),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  )),
+            ],
+          )
         ],
       ),
       body: ListView(
@@ -147,8 +163,7 @@ _buildRestaurants(){
                   suffixIcon: IconButton(
                     icon: Icon(Icons.clear),
                     onPressed: () {},
-                  )
-                  ),
+                  )),
             ),
           ),
           RecentOrder(),
@@ -165,8 +180,8 @@ _buildRestaurants(){
                     letterSpacing: 1.2,
                   ),
                 ),
-                ),
-                _buildRestaurants()
+              ),
+              _buildRestaurants()
             ],
           )
         ],
