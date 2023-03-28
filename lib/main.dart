@@ -1,4 +1,4 @@
-import 'package:delivery_fastfood_app/screens/home_screen.dart';
+import 'package:delivery_fastfood_app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

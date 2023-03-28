@@ -1,10 +1,10 @@
-import 'package:delivery_fastfood_app/models/data.dart';
+import 'package:delivery_fastfood_app/models/data_food.dart';
 import 'package:delivery_fastfood_app/models/food.dart';
 import 'package:delivery_fastfood_app/models/restaurant.dart';
-import 'package:delivery_fastfood_app/widget/rating_star.dart';
+import 'package:delivery_fastfood_app/screens/home/widget/rating_star.dart';
 import 'package:flutter/material.dart';
-import '../widget/food_list.dart';
-import '../widget/food_list_view.dart';
+import 'widget/food_list.dart';
+import 'widget/food_list_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class RestaurantScreen extends StatefulWidget {
