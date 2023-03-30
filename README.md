@@ -1,16 +1,15 @@
-# delivery_fastfood_app
+# Project học phần PTUD Di động (CT484)
 
-A new Flutter project.
+Học kỳ 2, Năm học 2022-2023
 
-## Getting Started
+**MSSV 1** : B1910275
 
-This project is a starting point for a Flutter application.
+**Họ tên SV 1**: Lê Việt Nhựt
 
-A few resources to get you started if this is your first Flutter project:
+**MSSV 2**: B1910288
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**Họ tên SV 2**: Nguyễn Minh Sang
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Lớp học phần**: CT48401
+
+**Tên dự án**: App delivery FastFood
