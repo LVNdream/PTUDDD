@@ -46,13 +46,29 @@ class CustomAppBar extends StatelessWidget {
         shape: BoxShape.circle,
         color: Colors.white,
       ),
-      child: IconButton(
-        icon: Icon(
-          food.isFavorite ? Icons.favorite : Icons.favorite_border,
-        ),
-        color: Colors.red,
-        onPressed: () {},
+      child: ValueListenableBuilder<bool>(
+        valueListenable: food.isFavoriteListenable,
+        builder: (context, isfavorite, child) {
+          return IconButton(
+            icon: Icon(
+              food.isFavorite ? Icons.favorite : Icons.favorite_border,
+            ),
+            color: Colors.red,
+            onPressed: () {
+              // print('Thay doi yeu thich');
+              food.isFavorite = !isfavorite;
+            },
+          );
+        },
       ),
+
+      // IconButton(
+      //   icon: Icon(
+      //     food.isFavorite ? Icons.favorite : Icons.favorite_border,
+      //   ),
+      //   color: Colors.red,
+      //   onPressed: () {},
+      // ),
     );
   }
 }

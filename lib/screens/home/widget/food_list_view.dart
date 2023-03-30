@@ -25,7 +25,7 @@ class FoodListView extends StatelessWidget {
                   itemBuilder: (context, index) => GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => DetailPage(
+                          builder: (context) => DetailScreen(
                               restaurant.menu[category[selected]]![index])));
                     },
                     child:

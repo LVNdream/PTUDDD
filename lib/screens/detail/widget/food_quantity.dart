@@ -1,6 +1,9 @@
 import 'package:delivery_fastfood_app/constants/color.dart';
+import 'package:delivery_fastfood_app/models/data_food.dart';
 import 'package:delivery_fastfood_app/models/food.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FoodQuantity extends StatelessWidget {
   // const FoodQuantity({super.key});
@@ -17,7 +20,7 @@ class FoodQuantity extends StatelessWidget {
             Align(
               alignment: Alignment(-0.3, 0),
               child: Container(
-                width: 120,
+                width: 170,
                 height: double.maxFinite,
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.1),
@@ -43,10 +46,10 @@ class FoodQuantity extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment(0.5, 0),
+              alignment: Alignment(0.6, 0),
               child: Container(
                 height: double.maxFinite,
-                width: 120,
+                width: 150,
                 decoration: BoxDecoration(
                   color: kPrimaryColor,
                   borderRadius: BorderRadius.circular(30),
@@ -54,10 +57,16 @@ class FoodQuantity extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      '-',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    // Text(
+                    //   '-',
+                    //   style:
+                    //       TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    // ),
+                    IconButton(
+                      onPressed: () {
+                        context.read<FoodData>().decreaseItem();
+                      },
+                      icon: Icon(Icons.remove),
                     ),
                     Container(
                       padding: EdgeInsets.all(12),
@@ -66,20 +75,26 @@ class FoodQuantity extends StatelessWidget {
                         color: Colors.white,
                       ),
                       child: Text(
-                        food.quantity.toString(),
+                        context.watch<FoodData>().quantityValue().toString(),
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    Text(
-                      '+',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    // Text(
+                    //   '+',
+                    //   style:
+                    //       TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    // ),
+                    IconButton(
+                      onPressed: () {
+                        context.read<FoodData>().increaseItem();
+                      },
+                      icon: Icon(Icons.add),
                     ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ));
   }

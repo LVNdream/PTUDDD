@@ -1,9 +1,63 @@
+import 'package:flutter/material.dart';
+
 import '../models/food.dart';
 import 'package:delivery_fastfood_app/models/restaurant.dart';
 import 'package:delivery_fastfood_app/models/recent_order_item.dart';
 import 'package:delivery_fastfood_app/models/user.dart';
+import 'package:flutter/foundation.dart';
 
 // Food
+class FoodData with ChangeNotifier {
+  // hàm tăng gaimr số lượng sản phẩm
+  int _quantity = 1;
+
+  int quantityValue() {
+    return _quantity;
+  }
+
+void resetQuantityItem() {
+    _quantity=0;
+    notifyListeners();
+  }
+
+  void increaseItem() {
+    _quantity++;
+    notifyListeners();
+  }
+
+  void decreaseItem() {
+    if (quantityValue() > 0) {
+      _quantity--;
+    } else {
+      print('Can\'t decrease');
+    }
+
+    notifyListeners();
+  }
+
+  List<Food> get favoriteItems {
+    return _items.where((item) => item.isFavorite).toList();
+  }
+
+  void toggleFavoriteStatus(Food food) {
+    final savedStatus = food.isFavorite;
+    food.isFavorite = !savedStatus;
+  }
+}
+
+List<Food> _items = [
+  _sobaSoup,
+  _saiua,
+  _ratatouille,
+  _tomatochicken,
+  _burrito,
+  _pancakes,
+  _pasta,
+  _pizza,
+  _ramen,
+  _salmon,
+  _steak,
+];
 // danh sach thuc an Recommend
 List<Food> generrateRecommendFoods() {
   return [_sobaSoup, _saiua, _ratatouille, _tomatochicken, _burrito, _pancakes];
@@ -151,8 +205,8 @@ final _pasta = Food(
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _ramen = Food(
     id: 'p8',
-    imageUrl: 'assets/images/ramen.jpg',
-    name: 'Ramen',
+    imageUrl: 'assets/images/canh.jpg',
+    name: 'Canh Mang',
     price: 25.79,
     isFavorite: true,
     desc: 'No1. in Sales',
@@ -271,7 +325,7 @@ final _restaurant2 = Restaurant(
 
 final _restaurant3 = Restaurant(
     'assets/images/restaurant3.jpg',
-    'Mũn Mỉm',
+    'Sao Mai',
     '123,Nguyễn Văn Cừ, Ninh Kiều, Cần Thơ',
     '0.5km',
     5,
@@ -323,3 +377,4 @@ final currentUser = User('VietNhut', [
 // int get itemCount{
 //   return generratePopularFoods().length+generrateRecommendFoods().length;
 // }
+// Danh sach cac mon an yeu thich

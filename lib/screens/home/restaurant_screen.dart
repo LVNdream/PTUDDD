@@ -1,7 +1,10 @@
+import 'package:delivery_fastfood_app/models/cart_manager.dart';
 import 'package:delivery_fastfood_app/models/data_food.dart';
 import 'package:delivery_fastfood_app/models/food.dart';
 import 'package:delivery_fastfood_app/models/restaurant.dart';
+import 'package:delivery_fastfood_app/screens/cart/cart_screen.dart';
 import 'package:delivery_fastfood_app/screens/home/widget/rating_star.dart';
+import 'package:delivery_fastfood_app/screens/widgets/custom_icon_cart.dart';
 import 'package:flutter/material.dart';
 import 'widget/food_list.dart';
 import 'widget/food_list_view.dart';
@@ -75,22 +78,22 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   //             ],
   //           ),
   //         ),
-      //     Positioned(
-      //       bottom: 15,
-      //       right: 15,
-      //       child: Container(
-      //         decoration: BoxDecoration(
-      //           color: Theme.of(context).primaryColor,
-      //           borderRadius: BorderRadius.circular(30),
-      //         ),
-      //         child: IconButton(
-      //           icon: Icon(Icons.add),
-      //           iconSize: 20,
-      //           color: Colors.white,
-      //           onPressed: () {},
-      //         ),
-      //       ),
-      //  ),
+  //     Positioned(
+  //       bottom: 15,
+  //       right: 15,
+  //       child: Container(
+  //         decoration: BoxDecoration(
+  //           color: Theme.of(context).primaryColor,
+  //           borderRadius: BorderRadius.circular(30),
+  //         ),
+  //         child: IconButton(
+  //           icon: Icon(Icons.add),
+  //           iconSize: 20,
+  //           color: Colors.white,
+  //           onPressed: () {},
+  //         ),
+  //       ),
+  //  ),
   //       ],
   //     ),
   //   );
@@ -275,8 +278,12 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+      floatingActionButton:
+          // CustomIconCart(),
+          FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed(CartScreen.routeName);
+        },
         backgroundColor: Colors.orange.shade400,
         elevation: 2,
         child: Icon(

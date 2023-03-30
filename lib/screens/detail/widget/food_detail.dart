@@ -38,6 +38,19 @@ class FoodDetail extends StatelessWidget {
           ),
           SizedBox(height: 30),
           FoodQuantity(food),
+          // SizedBox(height: 5),
+          // Container(
+          //   child: IconButton(
+          //     icon: const Icon(
+          //       Icons.shopping_cart,
+          //       size: 35,
+          //       color: kPrimaryColor,
+          //     ),
+          //     onPressed: () {
+          //       print('add to cart');
+          //     },
+          //   ),
+          // ),
           SizedBox(
             height: 30,
           ),

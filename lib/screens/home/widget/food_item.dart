@@ -90,24 +90,24 @@ class FoodItem extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          bottom: 12,
-          right: 15,
-          child: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: IconButton(
-              icon: Icon(Icons.add),
-              iconSize: 20,
-              color: Colors.white,
-              onPressed: () {},
-            ),
-          ),
-        ),
+        // Positioned(
+        //   bottom: 12,
+        //   right: 15,
+        //   child: Container(
+        //     height: 40,
+        //     width: 40,
+        //     decoration: BoxDecoration(
+        //       color: Theme.of(context).primaryColor,
+        //       borderRadius: BorderRadius.circular(30),
+        //     ),
+        //     child: IconButton(
+        //       icon: Icon(Icons.add),
+        //       iconSize: 20,
+        //       color: Colors.white,
+        //       onPressed: () {},
+        //     ),
+        //   ),
+        // ),
         // Positioned(
         //   bottom: 23,
         //   right: 80,

@@ -4,6 +4,7 @@ import 'package:delivery_fastfood_app/screens/cart/cart_screen.dart';
 
 import 'package:delivery_fastfood_app/screens/home/restaurant_screen.dart';
 import 'package:delivery_fastfood_app/screens/home/widget/rating_star.dart';
+import 'package:delivery_fastfood_app/shared/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'widget/recent_order.dart';
 import '../../models/data_food.dart';
@@ -125,12 +126,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.account_circle),
-          iconSize: 30.0,
-          onPressed: () {},
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.account_circle),
+        //   iconSize: 30.0,
+        //   onPressed: () {},
+        // ),
+
         // leading: GestureDetector(
         //   onTap: () {},
         //   child: Container(
@@ -168,17 +171,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Positioned(
-                  top: 2,
-                  left: 15,
-                  child: Text(
-                    '${currentUser.cart.length}',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 237, 234, 234),
-                      fontWeight: FontWeight.w600,
-                    ),
-                  )),
             ],
           )
         ],

@@ -1,4 +1,6 @@
+import 'package:delivery_fastfood_app/models/cart_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../../models/cart_item.dart';
 import '../../../shared/dialog_utils.dart';
 
@@ -28,7 +30,7 @@ class CartItemCard extends StatelessWidget {
             context, 'Do you want to remove the item from the cart ???');
       },
       onDismissed: (direction) {
-        print('Cart item dismissed');
+        context.read<CartManager>().removeItem(foodId);
       },
       child: buildItemCart(),
     );

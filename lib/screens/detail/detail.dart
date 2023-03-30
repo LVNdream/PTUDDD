@@ -1,13 +1,18 @@
 import 'package:delivery_fastfood_app/constants/color.dart';
+import 'package:delivery_fastfood_app/models/cart_manager.dart';
+import 'package:delivery_fastfood_app/models/data_food.dart';
 import 'package:delivery_fastfood_app/models/food.dart';
+import 'package:delivery_fastfood_app/screens/cart/cart_screen.dart';
 import 'package:delivery_fastfood_app/screens/detail/widget/food_detail.dart';
 import 'package:delivery_fastfood_app/screens/detail/widget/food_img.dart';
 import 'package:delivery_fastfood_app/screens/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailScreen extends StatelessWidget {
+  static const routeName = '/food-detail';
   final Food food;
-  DetailPage(this.food);
+  DetailScreen(this.food);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +44,7 @@ class DetailPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Icon(
-                Icons.shopping_bag_outlined,
+                Icons.shopping_cart,
                 color: Colors.black,
                 size: 30,
               ),
@@ -50,7 +55,7 @@ class DetailPage extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Text(
-                  food.quantity.toString(),
+                  context.watch<FoodData>().quantityValue().toString(),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
@@ -59,7 +64,27 @@ class DetailPage extends StatelessWidget {
               ),
             ],
           ),
-          onPressed: () {},
+          onPressed: () {
+            final cart = context.read<CartManager>();
+            cart.addItem(food, context.read<FoodData>().quantityValue());
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                SnackBar(
+                  content: const Text(
+                    'Item added to cart',
+                  ),
+                  duration: const Duration(seconds: 2),
+                  action: SnackBarAction(
+                    label: 'UNDO',
+                    onPressed: () {
+                      cart.removeSingleItem(food.id!);
+                    },
+                  ),
+                ),
+              );
+            context.read<FoodData>().resetQuantityItem();
+          },
         ),
       ),
     );

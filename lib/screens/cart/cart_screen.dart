@@ -1,6 +1,8 @@
 import 'package:delivery_fastfood_app/constants/color.dart';
 import 'package:delivery_fastfood_app/screens/order/order_screen.dart';
+import 'package:delivery_fastfood_app/shared/app_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../cart/widget/cart_item_card.dart';
 import '../../models/cart_manager.dart';
 
@@ -10,11 +12,11 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final cart = context.watch<CartManager>();
-    final cart = CartManager();
+    final cart = context.watch<CartManager>();
+    // final cart = CartManager();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Cart !!!'),
+        title: const Text('My Cart'),
       ),
       body: Column(
         children: <Widget>[
