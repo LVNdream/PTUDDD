@@ -6,17 +6,17 @@ import '../models/order_item.dart';
 class OrdersManager with ChangeNotifier {
   // Ding nghia cac phuong thuc them mot dat hang moi
 
-  // void addOrder(List<CartItem> cartProducts, double total) async {
-  //   _orders.insert(
-  //     0,
-  //     OrderItem(
-  //       amount: total,
-  //       products: cartProducts,
-  //       dateTime: DateTime.now(),
-  //     ),
-  //   );
-  //   notifyListeners();
-  // }
+  void addOrder(List<CartItem> cartItems, double total) async {
+    _orders.insert(
+      0,
+      OrderItem(
+        amount: total,
+        foods: cartItems,
+        dateTime: DateTime.now(),
+      ),
+    );
+    notifyListeners();
+  }
 
   final List<OrderItem> _orders = [
     OrderItem(
@@ -35,7 +35,21 @@ class OrdersManager with ChangeNotifier {
           name: 'Sai Ua Samun Phrai',
           imageUrl: 'assets/images/dish2.png',
           quantity: 2,
-          price: 31.05,
+          price: 10.03,
+        ),
+        CartItem(
+          id: 'c3',
+          name: 'Ramen',
+          imageUrl: 'assets/images/canh.jpg',
+          quantity: 4,
+          price: 10.24,
+        ),
+        CartItem(
+          id: 'c4',
+          name: 'Pizza',
+          imageUrl: 'assets/images/pizza.jpg',
+          quantity: 1,
+          price: 70.77,
         ),
       ],
       dateTime: DateTime.now(),

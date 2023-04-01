@@ -9,25 +9,50 @@ import 'package:flutter/foundation.dart';
 // Food
 class FoodData with ChangeNotifier {
   // hàm tăng gaimr số lượng sản phẩm
-  int _quantity = 1;
+  // int _quantity = 1;
 
-  int quantityValue() {
-    return _quantity;
+  // int quantityValue() {
+  //   return _quantity;
+  // }
+
+  // void resetQuantityItem() {
+  //   _quantity = 0;
+  //   notifyListeners();
+  // }
+
+  // void increaseItem() {
+  //   _quantity++;
+  //   notifyListeners();
+  // }
+
+  // void decreaseItem() {
+  //   if (quantityValue() > 0) {
+  //     _quantity--;
+  //   } else {
+  //     print('Can\'t decrease');
+  //   }
+
+  //   notifyListeners();
+  // }
+
+  // hàm để tangwgiamr số lượng yêu thích
+  num quantityValueF(Food food) {
+    return food.isQuantity;
   }
 
-void resetQuantityItem() {
-    _quantity=0;
+  void resetQuantityItemF(Food food) {
+    food.isQuantityReset();
     notifyListeners();
   }
 
-  void increaseItem() {
-    _quantity++;
+  void increaseItemF(Food food) {
+    food.isQuantityAdd();
     notifyListeners();
   }
 
-  void decreaseItem() {
-    if (quantityValue() > 0) {
-      _quantity--;
+  void decreaseItemF(Food food) {
+    if (food.isQuantity > 1) {
+      food.isQuantityRemove();
     } else {
       print('Can\'t decrease');
     }
@@ -206,7 +231,7 @@ final _pasta = Food(
 final _ramen = Food(
     id: 'p8',
     imageUrl: 'assets/images/canh.jpg',
-    name: 'Canh Mang',
+    name: 'Ramen',
     price: 25.79,
     isFavorite: true,
     desc: 'No1. in Sales',

@@ -11,7 +11,7 @@ class Food {
   final String desc;
   final num score;
   final String cal;
-  final num quantity;
+  final ValueNotifier <num> _isQuantity;
   final List<Map<String, String>> ingredients;
   final String about;
   Food(
@@ -23,10 +23,10 @@ class Food {
       required this.desc,
       required this.score,
       required this.cal,
-      required this.quantity,
+      quantity = 1,
       required this.ingredients,
       required this.about})
-      : _isFavorite = ValueNotifier(isFavorite);
+      : _isFavorite = ValueNotifier(isFavorite), _isQuantity = ValueNotifier(quantity);
 
   set isFavorite(bool newFavorite) {
     _isFavorite.value = newFavorite;
@@ -35,10 +35,24 @@ class Food {
   bool get isFavorite {
     return _isFavorite.value;
   }
-
   ValueNotifier<bool> get isFavoriteListenable {
     return _isFavorite;
   }
+//////////////////////
+  void isQuantityAdd() {
+    _isQuantity.value++;
+  }
+  void isQuantityRemove() {
+    _isQuantity.value--;
+  }
+  void isQuantityReset() {
+    _isQuantity.value=1;
+  }
+
+    num get isQuantity {
+    return _isQuantity.value;
+  }
+  
 
   Food coppyWith({
     String? id,
@@ -61,7 +75,7 @@ class Food {
         desc: desc ?? this.desc,
         score: score ?? this.score,
         cal: cal ?? this.cal,
-        quantity: quantity ?? this.quantity,
+        // quantity: quantity ?? this.quantity,
         ingredients: ingredients ?? this.ingredients,
         about: about ?? this.about);
   }

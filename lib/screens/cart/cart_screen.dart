@@ -1,4 +1,5 @@
 import 'package:delivery_fastfood_app/constants/color.dart';
+import 'package:delivery_fastfood_app/models/order_item_manager.dart';
 import 'package:delivery_fastfood_app/screens/order/order_screen.dart';
 import 'package:delivery_fastfood_app/shared/app_drawer.dart';
 import 'package:flutter/material.dart';
@@ -62,12 +63,16 @@ class CartScreen extends StatelessWidget {
               TextButton(
                 // onPressed: () {
                 //   print('An order has been add!');
-
                 // },
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => OrdersScreen()),
-                ),
+                onPressed: cart.totalAmount <= 0
+                    ? null
+                    : () {
+                        context.read<OrdersManager>().addOrder(
+                              cart.foods,
+                              cart.totalAmount,
+                            );
+                        cart.clear();
+                      },
                 style: TextButton.styleFrom(
                   textStyle: TextStyle(
                       color: kPrimaryColor, fontWeight: FontWeight.w500),

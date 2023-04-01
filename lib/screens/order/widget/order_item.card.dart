@@ -30,27 +30,46 @@ class _OrderItemCard extends State<OrderItemCard> {
   Widget buildOrderDetails() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
-      height: min(widget.order.productCount * 20.0 + 10, 100),
+      height: 270,
       child: ListView(
           children: widget.order.foods
               .map(
-                (prod) => Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      prod.name,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                (prod) => Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          height: 55,
+                          width: 55,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: CircleAvatar(
+                            radius: 48,
+                            backgroundImage: AssetImage(prod.imageUrl),
+                          ),
+                        ),
+                        Text(
+                          prod.name,
+                          style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 122, 121, 121)),
+                        ),
+                        Text(
+                          '${prod.quantity} x \$${prod.price}',
+                          style: const TextStyle(
+                            fontSize: 18,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      '${prod.quantity}x \$${prod.price}',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        color: Colors.grey,
-                      ),
-                    ),
+                    SizedBox(
+                      height: 10,
+                    )
                   ],
                 ),
               )
@@ -60,12 +79,23 @@ class _OrderItemCard extends State<OrderItemCard> {
 
   Widget buildOrderSummary() {
     return ListTile(
-      title: Text('\$${widget.order.amount}'),
+      title: Text(
+        '\$${widget.order.amount}',
+        style: TextStyle(
+          color: Colors.red,
+          fontWeight: FontWeight.w600,
+          fontSize: 20,
+        ),
+      ),
       subtitle: Text(
         DateFormat('dd/MM/yy hh:mm').format(widget.order.dateTime),
+        style: TextStyle(
+          color: Colors.black87,
+          fontSize: 17,
+        ),
       ),
       trailing: IconButton(
-        icon: Icon(_expanded ?  Icons.expand_less : Icons.expand_more),
+        icon: Icon(_expanded ? Icons.expand_less : Icons.expand_more),
         onPressed: () {
           setState(() {
             _expanded = !_expanded;

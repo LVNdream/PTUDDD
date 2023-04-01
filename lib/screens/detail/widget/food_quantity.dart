@@ -64,7 +64,7 @@ class FoodQuantity extends StatelessWidget {
                     // ),
                     IconButton(
                       onPressed: () {
-                        context.read<FoodData>().decreaseItem();
+                        context.read<FoodData>().decreaseItemF(food);
                       },
                       icon: Icon(Icons.remove),
                     ),
@@ -75,7 +75,10 @@ class FoodQuantity extends StatelessWidget {
                         color: Colors.white,
                       ),
                       child: Text(
-                        context.watch<FoodData>().quantityValue().toString(),
+                        context
+                            .watch<FoodData>()
+                            .quantityValueF(food)
+                            .toString(),
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
@@ -87,7 +90,7 @@ class FoodQuantity extends StatelessWidget {
                     // ),
                     IconButton(
                       onPressed: () {
-                        context.read<FoodData>().increaseItem();
+                        context.read<FoodData>().increaseItemF(food);
                       },
                       icon: Icon(Icons.add),
                     ),

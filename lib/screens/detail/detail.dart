@@ -55,7 +55,7 @@ class DetailScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Text(
-                  context.watch<FoodData>().quantityValue().toString(),
+                  context.watch<FoodData>().quantityValueF(food).toString(),
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
@@ -66,7 +66,8 @@ class DetailScreen extends StatelessWidget {
           ),
           onPressed: () {
             final cart = context.read<CartManager>();
-            cart.addItem(food, context.read<FoodData>().quantityValue());
+            cart.addItem(
+                food, context.read<FoodData>().quantityValueF(food).toInt());
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
@@ -83,7 +84,7 @@ class DetailScreen extends StatelessWidget {
                   ),
                 ),
               );
-            context.read<FoodData>().resetQuantityItem();
+            context.read<FoodData>().resetQuantityItemF(food);
           },
         ),
       ),

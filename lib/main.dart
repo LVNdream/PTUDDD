@@ -1,5 +1,6 @@
 import 'package:delivery_fastfood_app/models/cart_manager.dart';
 import 'package:delivery_fastfood_app/models/data_food.dart';
+import 'package:delivery_fastfood_app/models/order_item_manager.dart';
 import 'package:delivery_fastfood_app/screens/cart/cart_screen.dart';
 import 'package:delivery_fastfood_app/screens/favorite/favorite_screen.dart';
 import 'package:delivery_fastfood_app/screens/home/home_screen.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (ctx) => CartManager(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => OrdersManager(),
         ),
       ],
       child: MaterialApp(
