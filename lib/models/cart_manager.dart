@@ -13,7 +13,7 @@ class CartManager with ChangeNotifier {
       quantity: 3,
       price: 20,
     ),
-    'id2': CartItem(
+    'p42': CartItem(
       id: 'c2',
       name: 'Sai Ua Samun Phrai',
       imageUrl: 'assets/images/dish2.png',
@@ -43,16 +43,15 @@ class CartManager with ChangeNotifier {
   }
 
 //  thme de add to cart
-  void addItem(Food food,int quantityItem) {
+  void addItem(Food food, int quantityItem) {
     if (_items.containsKey(food.id)) {
       //change quantity...
-      // _items.update(
-      //   food.id!,
-      //   (existingCartItem) => existingCartItem.copyWith(
-      //     quantity: existingCartItem.quantity + 1,
-      //   ),
-      // );
-      print('da ton tai');
+      _items.update(
+        food.id!,
+        (existingCartItem) => existingCartItem.copyWith(
+          quantity: existingCartItem.quantity + 1,
+        ),
+      );
     } else {
       _items.putIfAbsent(
         food.id!,

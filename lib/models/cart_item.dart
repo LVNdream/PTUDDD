@@ -15,7 +15,7 @@ class CartItem {
     return CartItem(
       id: id ?? this.id,
       name: name?? this.name,
-      imageUrl: imageUrl?? this.name,
+      imageUrl: imageUrl?? this.imageUrl,
       quantity: quantity?? this.quantity,
       price: price?? this.price,
     );

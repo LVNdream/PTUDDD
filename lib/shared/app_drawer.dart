@@ -1,6 +1,8 @@
 import 'package:delivery_fastfood_app/constants/color.dart';
+import 'package:delivery_fastfood_app/screens/auth/auth_manager.dart';
 import 'package:delivery_fastfood_app/screens/favorite/favorite_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 // import 'package:myshop/ui/auth/auth_manager.dart';
 // import 'package:provider/provider.dart';
 
@@ -98,7 +100,7 @@ class AppDrawer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       child: Column(
-        children: [
+        children: <Widget>[
           ListTile(
             leading: const Icon(
               Icons.home_outlined,
@@ -161,6 +163,22 @@ class AppDrawer extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
             ),
             onTap: () {},
+          ),
+          const Divider(
+            color: Colors.black,
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.exit_to_app,
+              color: Color.fromARGB(255, 255, 123, 0),
+            ),
+            title: const Text('Logout'),
+            onTap: () {
+              Navigator.of(context)
+                ..pop()
+                ..pushReplacementNamed('/');
+              context.read<AuthManager>().logout();
+            },
           ),
           const Divider(
             color: Colors.black,
