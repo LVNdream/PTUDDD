@@ -114,6 +114,11 @@ final _sobaSoup = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      {'id':'cmt11','email':'lvn@gmail.com','des':'Very good','score':'4.5'},
+      {'id':'cmt12','email':'lvn@gmail.com','des':'Very taste','score':'4.5'},
+      {'id':'cmt13','email':'lvn@gmail.com','des':'Very delicious','score':'4.5'},
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
@@ -133,6 +138,12 @@ final _saiua = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      {'id':'cmt21','email':'lvn@gmail.com','des':'Very good','score':'4.5'},
+      {'id':'cmt22','email':'lvn@gmail.com','des':'Very taste','score':'4.5'},
+      {'id':'cmt33','email':'lvn@gmail.com','des':'Very delicious','score':'4.5'},
+
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
@@ -152,6 +163,12 @@ final _ratatouille = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      {'id':'cmt31','email':'lvn@gmail.com','des':'Very good','score':'4.5'},
+      {'id':'cmt32','email':'lvn@gmail.com','des':'Very taste','score':'4.5'},
+      {'id':'cmt33','email':'lvn@gmail.com','des':'Very delicious','score':'4.5'},
+
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
@@ -171,6 +188,11 @@ final _tomatochicken = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      {'id':'cmt41','email':'lvn@gmail.com','des':'Very good','score':'4.5'},
+      {'id':'cmt42','email':'lvn@gmail.com','des':'Very taste','score':'4.5'},
+      {'id':'cmt43','email':'lvn@gmail.com','des':'Very delicious','score':'4.5'},
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 
@@ -190,6 +212,8 @@ final _burrito = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _steak = Food(
@@ -208,6 +232,8 @@ final _steak = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _pasta = Food(
@@ -226,6 +252,8 @@ final _pasta = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _ramen = Food(
@@ -244,6 +272,8 @@ final _ramen = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _pancakes = Food(
@@ -262,6 +292,8 @@ final _pancakes = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _pizza = Food(
@@ -280,6 +312,8 @@ final _pizza = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 final _salmon = Food(
@@ -298,6 +332,8 @@ final _salmon = Food(
       {'Egg': 'assets/images/ingre3.png'},
       {'Scallion': 'assets/images/ingre4.png'},
     ],
+    comments: [
+      ],
     about:
         'A bowl of soba is a beautiful, exotic and delicious centerpiece for a Japanese meal: the not-too-soft, nutty buckwheat noodles sitting in a mahogany broth — dashi — that’s as clear and glossy as beef consommé, not only salty and umami-complex but sweet as well. My favorite variety, tamago toji, is egg-topped. When it’s made right, the egg is almost foamy, soft-scrambled and tender, deliciously flavored by the dashi, a bit of which it absorbs.');
 

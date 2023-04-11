@@ -3,6 +3,7 @@ import 'package:delivery_fastfood_app/models/cart_manager.dart';
 import 'package:delivery_fastfood_app/models/data_food.dart';
 import 'package:delivery_fastfood_app/models/food.dart';
 import 'package:delivery_fastfood_app/screens/cart/cart_screen.dart';
+import 'package:delivery_fastfood_app/screens/detail/widget/food_comment.dart';
 import 'package:delivery_fastfood_app/screens/detail/widget/food_detail.dart';
 import 'package:delivery_fastfood_app/screens/detail/widget/food_img.dart';
 import 'package:delivery_fastfood_app/screens/widgets/custom_app_bar.dart';
@@ -28,6 +29,7 @@ class DetailScreen extends StatelessWidget {
             ),
             FoodImg(food),
             FoodDetail(food),
+            // FoodComment(food),
           ],
         ),
       ),

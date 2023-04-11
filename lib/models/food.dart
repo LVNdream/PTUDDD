@@ -13,6 +13,7 @@ class Food {
   final String cal;
   final ValueNotifier <num> _isQuantity;
   final List<Map<String, String>> ingredients;
+  final List<Map<String, String>> comments;
   final String about;
   Food(
       {this.id,
@@ -25,6 +26,7 @@ class Food {
       required this.cal,
       quantity = 1,
       required this.ingredients,
+      required this.comments,
       required this.about})
       : _isFavorite = ValueNotifier(isFavorite), _isQuantity = ValueNotifier(quantity);
 
@@ -65,6 +67,7 @@ class Food {
     String? cal,
     num? quantity,
     List<Map<String, String>>? ingredients,
+    List<Map<String, String>>? comments,
     String? about,
   }) {
     return Food(
@@ -77,6 +80,7 @@ class Food {
         cal: cal ?? this.cal,
         // quantity: quantity ?? this.quantity,
         ingredients: ingredients ?? this.ingredients,
+        comments: comments ?? this.comments,
         about: about ?? this.about);
   }
 }

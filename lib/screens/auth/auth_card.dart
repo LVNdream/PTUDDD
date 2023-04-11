@@ -50,11 +50,11 @@ class _AuthCardState extends State<AuthCard> {
             );
       }
     } catch (error) {
-      // showErrorDialog(
-      //     context,
-      //     (error is HttpException)
-      //         ? error.toString()
-      //         : 'Authentication failed');
+      showErrorDialog(
+          context,
+          (error is HttpException)
+              ? error.toString()
+              : 'Authentication failed');
       print(error);
     }
 
